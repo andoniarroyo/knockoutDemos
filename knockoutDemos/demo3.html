@@ -1,0 +1,21 @@
+﻿<html>
+<head>
+    <title>Demo 3</title>
+</head>
+    <body>
+        <span>name:</span>
+        <span data-bind="text: name"></span>
+        <span>range:</span>
+        <span data-bind="text: range"></span>
+        <button data-bind="enable: canPromote(), click: promote">Promote!!</button>
+        <ul data-bind="foreach: { data: battalionSoldiers, afterAdd: showSoldier}">
+            <li>
+                <span data-bind="text: name"></span> (<span data-bind="text: force"></span>)
+                <span data-bind="if: force > 5">!!</span>
+            </li>
+        </ul>
+    </body>
+    <script src="Scripts/jquery-2.0.0.js"></script>
+    <script src="Scripts/knockout-2.2.1.js"></script>
+    <script src="Scripts/vm/vmDemo3.js"></script>
+</html>

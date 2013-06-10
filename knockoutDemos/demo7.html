@@ -1,0 +1,23 @@
+﻿<html>
+<head>
+    <title>Demo 6 </title>
+</head>
+    <body>
+       <span data-bind="visible: isLoading()">Loading...</span>
+       <div>
+           <span>name:</span>
+           <input data-bind="value: searchItem, valueUpdate: 'afterkeydown'"/>
+          
+        
+            <ul data-bind="foreach: { data: retrievedSoldier }"> 
+                <li>
+                    <span data-bind="text: Name"></span>
+                </li>
+            </ul>
+        </div>
+    </body>
+    <script src="Scripts/jquery-2.0.0.js"></script>
+    <script src="Scripts/knockout-2.2.1.js"></script>
+    <script src="Scripts/knockout.mapping.js"></script>
+    <script src="Scripts/vm/vmDemo7.js"></script>
+</html>

@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <ul data-bind="template: { name: 'teamTemplate', foreach: teams, as: 'team' }"></ul>
+ 
+        <script type="text/html" id="teamTemplate">
+            <li>
+                <strong data-bind="text: name"></strong>
+                <ul data-bind="template: { name: 'playerTemplate', foreach: players, as: 'player' }"></ul>
+            </li>
+        </script>
+ 
+        <script type="text/html" id="playerTemplate">
+            <li>
+                <span data-bind="text: player"></span> -> <span data-bind="text: team.name"></span>
+            </li>
+        </script>
+    </body>
+</html>
+
+<script src="Scripts/knockout-2.2.1.js"></script>
+<script src="Scripts/vm/vmDemo6.js"></script>

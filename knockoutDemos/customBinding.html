@@ -1,0 +1,23 @@
+﻿<html>
+<head>
+    <title>Demo customBinding </title>
+    <link href="Resources/standard.css" rel="stylesheet" />
+    <link href="Resources/jquery-ui.css" rel="stylesheet" />
+</head>
+    <body>
+        <div>
+            <div id="slider-range" data-bind="amount: amount"></div>
+            <span data-bind="text: amount"></span>
+        </div>
+        
+        <div>
+            <div id="slider-range-to-return" data-bind="amount: amountToReturn"></div>
+            <span data-bind="text: amountToReturn"></span>
+        </div>
+    </body>
+    <script src="Scripts/jquery-2.0.0.js"></script>
+    <script src="Scripts/jquery-ui-1.9.2.js"></script>
+    <script src="Scripts/knockout-2.2.1.js"></script>
+    <script src="Scripts/customBindings/amountBinding.js"></script>
+    <script src="Scripts/vm/customBinding.js"></script>
+</html>

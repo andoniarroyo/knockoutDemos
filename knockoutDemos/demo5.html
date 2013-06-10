@@ -1,0 +1,29 @@
+﻿<html>
+<head>
+    <title>Demo 5 </title>
+</head>
+    <body>
+       <span data-bind="visible: isLoading()">Loading...</span>
+        
+        <div data-bind="with: retrievedSoldier ">
+            <span>name:</span>
+            <span data-bind="text: Name"></span>
+            <span>range:</span>
+            <span data-bind="text: Range"></span>
+            <button data-bind="enable: $parent.canPromote, click: $parent.promote">Promote!!</button>
+        
+            <ul data-bind="foreach: { data: BattalionSoldiers, afterAdd: $parent.showSoldier }"> 
+                <li>
+                    <span data-bind="text: Name"></span> (<span data-bind="text: Range"></span>)
+                    <span data-bind="if: Range() > 5">!!</span>
+                </li>
+            </ul>
+        </div>
+        <button data-bind="click: saveSoldier">Save</button>
+
+    </body>
+    <script src="Scripts/jquery-2.0.0.js"></script>
+    <script src="Scripts/knockout-2.2.1.js"></script>
+    <script src="Scripts/knockout.mapping.js"></script>
+    <script src="Scripts/vm/vmDemo5.js"></script>
+</html>
