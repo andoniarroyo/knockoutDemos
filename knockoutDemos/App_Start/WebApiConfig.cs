@@ -1,25 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Http;
-
-namespace knockoutDemos
+﻿namespace knockoutDemos
 {
+    using System.Web.Http;
+
+    /// <summary>
+    /// The web api config.
+    /// </summary>
     public static class WebApiConfig
     {
+        #region Public Methods and Operators
+
+        /// <summary>
+        /// The register.
+        /// </summary>
+        /// <param name="config">
+        /// The config.
+        /// </param>
         public static void Register(HttpConfiguration config)
         {
             config.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
-            );
-
-        //    config.Routes.MapHttpRoute(
-        //    name: "searchAPI",
-        //    routeTemplate: "api/{controller}/{soldierName}",
-        //    defaults: new { soldierName = RouteParameter.Optional }
-        //);
+                name: "DefaultApi", 
+                routeTemplate: "api/{controller}/{id}", 
+                defaults: new { id = RouteParameter.Optional });
         }
+
+        #endregion
     }
 }

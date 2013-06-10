@@ -1,13 +1,4 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="SearchController.cs" company="">
-//   
-// </copyright>
-// <summary>
-//   The soldier controller.
-// </summary>
-// --------------------------------------------------------------------------------------------------------------------
-
-namespace knockoutDemos.Controllers
+﻿namespace knockoutDemos.Controllers
 {
     using System.Collections.Generic;
     using System.Linq;
@@ -21,20 +12,35 @@ namespace knockoutDemos.Controllers
     /// </summary>
     public class SearchSoldiersController : ApiController
     {
-        private static readonly List<Soldier> soldiers = new List<Soldier>
-                                                    {
-                                                        new Soldier { Name = "andoni" },
-                                                        new Soldier { Name = "andoni 2" },
-                                                        new Soldier { Name = "conan" },
-                                                        new Soldier { Name = "chuck" }
-                                                    };
+        #region Static Fields
+
+        /// <summary>
+        /// The soldiers.
+        /// </summary>
+        private static readonly List<Soldier> Soldiers = new List<Soldier>
+                                                             {
+                                                                 new Soldier { Name = "andoni" }, 
+                                                                 new Soldier { Name = "andoni 2" }, 
+                                                                 new Soldier { Name = "conan" }, 
+                                                                 new Soldier { Name = "chuck" }
+                                                             };
+
+        #endregion
 
         #region Public Methods and Operators
-        
+
+        /// <summary>
+        /// The get.
+        /// </summary>
+        /// <param name="id">
+        /// The id.
+        /// </param>
+        /// <returns>
+        /// The <see cref="List"/>.
+        /// </returns>
         public List<Soldier> Get(string id)
         {
-            Thread.Sleep(3000);
-            return soldiers.Where(s => s.Name.Contains(id.ToLower())).ToList();
+            return Soldiers.Where(s => s.Name.Contains(id.ToLower())).ToList();
         }
 
         #endregion

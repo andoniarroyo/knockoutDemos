@@ -1,22 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Http;
-using System.Web.Mvc;
-using System.Web.Routing;
-
-namespace knockoutDemos
+﻿namespace knockoutDemos
 {
-    public class MvcApplication : System.Web.HttpApplication
+    using System.Web;
+    using System.Web.Http;
+    using System.Web.Mvc;
+
+    /// <summary>
+    /// The mvc application.
+    /// </summary>
+    public class MvcApplication : HttpApplication
     {
+        #region Methods
+
+        /// <summary>
+        /// The application_ start.
+        /// </summary>
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
 
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-            RouteConfig.RegisterRoutes(RouteTable.Routes);
         }
+
+        #endregion
     }
 }
